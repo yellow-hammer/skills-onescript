@@ -1,0 +1,19 @@
+# Cursor
+.cursor/plans/
+.cursor/projects/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# OneScript / opm (если в репо появятся тестовые проекты)
+oscript_modules/
+*.ospx
+built/
+
+# Служебные каталоги (если клонируют сюда свой проект)
+.vscode/settings.json
+!.vscode/extensions.json

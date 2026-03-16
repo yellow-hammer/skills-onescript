@@ -2,7 +2,7 @@
 
 [![OpenYellow](https://openyellow.openintegrations.dev/data/badges/1170180878.svg)](https://openyellow.org/grid?filter=top&repo=1170180878)
 [![telegram chat](https://img.shields.io/badge/telegram-chat-green.svg)](https://t.me/wonder_yellow)
-[![Ask Devin](https://deepwiki.com/badge.svg)](https://app.devin.ai/org/yellow-hammer/wiki/yellow-hammer/skills-onescript)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/yellow-hammer/skills-onescript)
 
 Набор **Cursor Agent Skills** для языка [OneScript](https://oscript.io/learn/) и экосистемы фреймворков [Autumn](https://autumn-library.github.io/). Skills дают агенту Cursor инструкции по синтаксису, структуре проектов и типичным паттернам при работе с кодом на OneScript.
 

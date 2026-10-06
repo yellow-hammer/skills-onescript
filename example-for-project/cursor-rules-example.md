@@ -1,12 +1,15 @@
-# Пример правил для .cursor/rules
+# Куда копировать навыки и правила
 
-Создай в своём проекте файл `.cursor/rules/onescript-skills.mdc` (или добавь блок в существующий rule-файл) со следующим содержимым. Отредактируй путь к репозиторию, если skills лежат не рядом.
+Скопируй навыки и правила по таблице.
 
----
+| Агент | Навыки | Правила |
+| --- | --- | --- |
+| Cursor | `.cursor/skills/` | `.cursor/rules/*.mdc` |
+| GitHub Copilot | `.github/skills/` | `.github/instructions/*.instructions.md` |
+| Claude Code | `.claude/skills/` | `.claude/rules/*.md` |
 
-При работе с OneScript (.os, packagedef, #Использовать, классы, модули) и фреймворками Autumn, autumn-cli, Winow используй инструкции из skills:
+Исходники правил в этом репозитории — `.mdc` с полем `globs`. В Copilot то же правило пишется с `applyTo`, в Claude Code — с `paths`. В свою папку клади `.mdc` в соседний каталог `rules`.
 
-- skills-onescript: склонирован в `../skills-onescript` (или укажи свой путь). Папки skills: `onescript`, `autumn`, `autumn-cli`, `winow`.
-- Либо skills уже скопированы в `.cursor/skills/` этого проекта — тогда агент подхватит их по описанию в SKILL.md.
+Навыки: `onescript`, `onescript-tests`, `autumn`, `autumn-cli`, `winow`.
 
-Выбирай skill по контексту: файлы .os и проектная структура → onescript; DI и желуди → autumn; консольные команды → autumn-cli; веб-маршруты и контроллеры → winow.
+Правила: `os-code-style`, `os-package`, `os-tests`, `os-pitfalls`.

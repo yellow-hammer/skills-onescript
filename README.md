@@ -1,43 +1,48 @@
 # Skills for OneScript
 
-[![OpenYellow](https://openyellow.openintegrations.dev/data/badges/1170180878.svg)](https://openyellow.org/grid?filter=top&repo=1170180878)
-[![telegram chat](https://img.shields.io/badge/telegram-chat-green.svg)](https://t.me/wonder_yellow)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/yellow-hammer/skills-onescript)
+Навыки и правила для [OneScript](https://oscript.io/learn/) и фреймворков [Autumn](https://autumn-library.github.io/). Навыки учат агента собирать пакет. Правила задают стиль и грабли платформы в проекте, куда их скопировали.
 
-Набор **Cursor Agent Skills** для языка [OneScript](https://oscript.io/learn/) и экосистемы фреймворков [Autumn](https://autumn-library.github.io/). Skills дают агенту Cursor инструкции по синтаксису, структуре проектов и типичным паттернам при работе с кодом на OneScript.
+## Навыки
 
-## Навыки (skills)
+| Skill | Когда |
+| --- | --- |
+| **onescript** | Пакет: `packagedef`, `src/Модули`, `src/Классы`, `internal`, opm, `#Использовать`. |
+| **onescript-tests** | Тесты OneUnit (`&Тест`, фикстуры, `opm run test`). Если в манифесте `1testrunner`, навык его не подменяет. |
+| **autumn** | DI, желуди, `&Желудь`, `&Дуб`, `&Завязь`, `Поделка`. |
+| **autumn-cli** | Команды, аргументы, опции, `autumn-properties.json`. |
+| **winow** | HTTP-контроллеры, маршруты, каталог `app`. |
 
-| Skill          | Описание                                                                                                                                                                     |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **onescript**  | Язык OneScript: структура модуля (.os), типы, конструкции, проекты (packagedef, src/Классы, src/Модули), библиотеки (#Использовать), opm.                                    |
-| **autumn**     | Фреймворк Autumn (ОСень): DI, компоненты («желуди»), Осень.НайтиЖелудь(), аннотации &Желудь, &Дуб, &Верховный, &Завязь, точка входа Поделка.                                 |
-| **autumn-cli** | Консольные приложения: команды и подкоманды (&КомандаПриложения, &ПодкомандаПриложения), аргументы и опции (&Аргумент, &Опция), &ВыполнениеКоманды, типы и осень-properties. |
-| **winow**      | Веб-сервер на OneScript и Autumn: &Контроллер, &ТочкаМаршрута, Запрос/Ответ, параметры, ограничения (без HTTPS).                                                             |
+Подробные грабли платформы лежат в `skills/onescript/pitfalls.md`.
 
-## Как использовать
+## Правила
 
-1. **Скопировать в проект**  
-   Скопируйте нужную папку из `skills/` в `.cursor/skills/` вашего проекта:
-   - `skills/onescript` → `.cursor/skills/onescript`
-   - `skills/autumn` → `.cursor/skills/autumn`
-   - и т.д.
+Каталог `rules/` ставится вместе с навыками в папки выбранного агента:
 
-2. **Или указать путь к репозиторию**  
-   Если в Cursor/агент настроен на чтение skills из внешнего каталога, укажите путь к этому репозиторию или к папке `skills` в нём.
+| Агент | Навыки | Правила |
+| --- | --- | --- |
+| Cursor | `.cursor/skills/` | `.cursor/rules/*.mdc` |
+| GitHub Copilot | `.github/skills/` | `.github/instructions/*.instructions.md` |
+| Claude Code | `.claude/skills/` | `.claude/rules/*.md` |
 
-После подключения агент будет применять соответствующий skill при работе с файлами .os, Autumn, autumn-cli или Winow (по описанию в `description` каждого SKILL.md).
+| Файл | К чему применяется |
+| --- | --- |
+| `os-code-style` | `**/*.os` |
+| `os-package` | `packagedef` |
+| `os-tests` | `tests/**/*.os` |
+| `os-pitfalls` | `**/*.os` |
 
-1. **Подключение в своём проекте (AGENTS.md / .cursor/rules)**  
-   Чтобы явно указать агенту на эти skills, в корне своего OneScript-проекта можно добавить:
-   - **AGENTS.md** — пример в [example-for-project/AGENTS.md.example](example-for-project/AGENTS.md.example): скопировать в проект как `AGENTS.md` и при необходимости поправить пути.
-   - **.cursor/rules** — пример текста для rule-файла в [example-for-project/cursor-rules-example.md](example-for-project/cursor-rules-example.md): создать `.cursor/rules/onescript-skills.mdc` или вставить блок в существующее правило.
+## Как подключить
 
-## Источники
+1. Скопируй нужные папки из `skills/` в папку навыков выбранного агента.
+2. Правила положи в его каталог правил.
 
-- [OneScript — изучение](https://oscript.io/learn/)
-- [Autumn Docs](https://autumn-library.github.io/)
+Пример `AGENTS.md` и текста правила: [example-for-project](example-for-project/).
+
+## Опора
+
+- [OneScript](https://oscript.io/learn/)
+- [Autumn](https://autumn-library.github.io/)
 
 ## Лицензия
 
-MIT — см. [LICENSE](LICENSE).
+MIT, см. [LICENSE](LICENSE).

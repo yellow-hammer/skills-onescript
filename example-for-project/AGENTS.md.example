@@ -1,18 +1,5 @@
-# Пример AGENTS.md для проекта на OneScript
-
-Скопируйте этот файл в корень своего проекта как `AGENTS.md` и при необходимости отредактируйте пути.
-
----
-
 # Agents
 
-При работе с кодом на OneScript и фреймворках Autumn/autumn-cli/Winow используй skills из репозитория skills-onescript.
+При правке `.os`, `packagedef`, тестов, Autumn, autumn-cli и Winow применяй навыки `onescript`, `onescript-tests`, `autumn`, `autumn-cli`, `winow`.
 
-## Skills
-
-Подключи один из вариантов:
-
-- **Вариант A:** скопированы в проект — папки лежат в `.cursor/skills/` (onescript, autumn, autumn-cli, winow).
-- **Вариант B:** путь к клонированному репозиторию skills-onescript, папка `skills` (или укажи в настройках агента путь к репозиторию).
-
-При редактировании файлов `.os`, `packagedef`, команд autumn-cli или контроллеров Winow применяй соответствующий skill по его описанию.
+Навыки и правила лежат в каталоге выбранного агента: `.cursor`, `.github` или `.claude`.

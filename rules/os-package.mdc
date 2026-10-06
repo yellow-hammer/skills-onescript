@@ -1,0 +1,21 @@
+---
+description: Структура пакета OneScript, packagedef и opm
+globs: "packagedef"
+alwaysApply: false
+---
+
+# Пакет OneScript
+
+Один каталог - один пакет. Общего корневого манифеста нет.
+
+```
+src/Модули/  src/Классы/  src/internal/Классы/
+tests/  tests/fixtures/  examples/  tasks/
+packagedef  README.md  LICENSE
+```
+
+- Публичные типы объявляются `.ОпределяетМодуль` и `.ОпределяетКласс`. Внутренние классы в манифест не входят, подключаются `#Использовать "../internal"`.
+- Рантайм-зависимости: `.ЗависитОт`. Тестовые: `.РазработкаЗависитОт` (`oneunit`, `asserts`, `1commands`, `fs`, `coverage`).
+- Команды из каталога пакета: `opm run install`, `opm run test`, `opm run build`.
+- JSON через встроенные `ЧтениеJSON` / `ЗаписьJSON`, пока пакет `json` явно не нужен.
+- `entity` с четырьмя сегментами версии требует opm 1.6.5: `opm update opm@1.6.5`.
